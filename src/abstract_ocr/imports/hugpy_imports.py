@@ -1,5 +1,5 @@
 from .init_imports import *
-
+from .module_imports import *
 
 logger = get_logFile(__name__)
 
@@ -27,7 +27,6 @@ def get_abstract_hugpy():
 def get_summarizer():
     """Text summarizer (lazy-loaded)."""
     if "summarizer" not in _MODELS:
-        get_abstract_hugpy()
         pipeline = get_transformers("pipeline")
         _MODELS["summarizer"] = pipeline(
             "text-generation",
@@ -51,7 +50,6 @@ def get_keyword_extractor():
 def get_generator():
     """Text generator (lazy-loaded)."""
     if "generator" not in _MODELS:
-        get_abstract_hugpy()
         pipeline = get_transformers("pipeline")
         _MODELS["generator"] = pipeline(
             "text-generation",
@@ -64,7 +62,6 @@ def get_generator():
 def get_kw_model():
     """KeyBERT instance (lazy-loaded)."""
     if "kw_model" not in _MODELS:
-        get_abstract_hugpy()
         KeyBERT = get_keybert()
         extractor = get_keyword_extractor()
         _MODELS["kw_model"] = KeyBERT(model=extractor.model)
@@ -74,7 +71,6 @@ def get_kw_model():
 def get_led():
     """LED tokenizer and model for long documents (lazy-loaded)."""
     if "led" not in _MODELS:
-        get_abstract_hugpy()
         LEDTokenizer = get_transformers("LEDTokenizer")
         LEDForConditionalGeneration = get_transformers("LEDForConditionalGeneration")
         tokenizer = LEDTokenizer.from_pretrained("allenai/led-base-16384")

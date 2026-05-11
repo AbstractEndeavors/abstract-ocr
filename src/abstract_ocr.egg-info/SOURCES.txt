@@ -24,6 +24,7 @@ src/abstract_ocr/imports/__init__.py
 src/abstract_ocr/imports/functions.py
 src/abstract_ocr/imports/hugpy_imports.py
 src/abstract_ocr/imports/init_imports.py
+src/abstract_ocr/imports/module_imports.py
 src/abstract_ocr/imports/utils.py
 src/abstract_ocr/imports/image_utils/__init__.py
 src/abstract_ocr/imports/image_utils/cv_constants.py
