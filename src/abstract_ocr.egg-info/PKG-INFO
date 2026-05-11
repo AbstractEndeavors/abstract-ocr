@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: abstract_ocr
-Version: 0.0.1.62
+Version: 0.0.1.63
 Summary: A structured OCR pipeline designed for **layout-aware text extraction from complex documents**, combining preprocessing, column detection, region classification, and ordered OCR assembly.
 Author: putkoff
 Author-email: partners@abstractendeavors.com

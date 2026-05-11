@@ -1,5 +1,4 @@
-from ..imports import (clean_text,
-                        re,
+from ..imports import (re,
                         write_to_file,
                         cv2,np,
                         pytesseract,
@@ -8,6 +7,18 @@ from ..imports import (clean_text,
                         get_all_file_types,
                         os,
                         is_media_type)
+def clean_text(text: str) -> str:
+    """Clean extracted text using DeepCoder-generated regex patterns."""
+    prompt = """
+    Write a Python function to clean OCR-extracted text. The function should:
+    - Remove excessive whitespace
+    - Strip non-alphanumeric characters except spaces, colons, commas, periods, and hyphens
+    - Trim leading/trailing spaces
+    Return the cleaned text.
+    """
+
+    txt = re.sub(r'\s+', ' ', text)
+    return re.sub(r'[^A-Za-z0-9\s:.,-]', '', txt).strip()
 def preprocess_for_ocr(image_path: str) -> np.ndarray:
     img = cv2.imread(image_path)
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
