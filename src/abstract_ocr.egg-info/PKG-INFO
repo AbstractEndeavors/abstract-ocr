@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: abstract_ocr
-Version: 0.0.1.61
+Version: 0.0.1.62
 Summary: A structured OCR pipeline designed for **layout-aware text extraction from complex documents**, combining preprocessing, column detection, region classification, and ordered OCR assembly.
 Author: putkoff
 Author-email: partners@abstractendeavors.com
@@ -35,6 +35,19 @@ Dynamic: requires-dist
 Dynamic: requires-python
 Dynamic: summary
 
+## Part of the Abstract Media Intelligence Platform
+
+This module provides layout-aware OCR as part of a larger media processing system.
+
+abstract_ocr focuses on extraction:
+- multi-engine OCR (Tesseract / EasyOCR / PaddleOCR)
+- column detection and region segmentation
+- structured, position-aware text output
+
+Full system: https://github.com/AbstractEndeavors/abstract-media-intelligence
+
+---
+
 ## **abstract_ocr / layout_ocr — Layout-Aware OCR Pipeline**
 
 A structured OCR pipeline designed for **layout-aware text extraction from complex documents**, combining preprocessing, column detection, region classification, and ordered OCR assembly.
@@ -61,29 +74,41 @@ This is not a simple OCR wrapper — it is a **typed, multi-stage processing pip
 The system is designed for **deterministic, reproducible extraction** rather than heuristic text scraping.
 
 ---
-
-## 🔹 Pipeline Overview
-
+## Pipeline Overview
 ```text
-PageImage
+PDF Input
     ↓
-Preprocess (denoise + binarize)
+Slice / Decompose (images + text per page)
     ↓
-Layout Detection
-    ├─ Column detection (vertical projection)
-    ├─ Header detection
-    └─ Region classification (text / figure / caption)
+OCR + Text Extraction (layout-aware engines)
     ↓
-Region OCR
-    ├─ Crop per region
-    ├─ Apply OCR (Tesseract)
-    ├─ Fallback to column-level OCR if needed
+Metadata Generation
+    ├─ summaries
+    ├─ keywords
+    └─ descriptions
     ↓
-Reading Order Assembly
+Manifest Creation (per-page + per-document)
     ↓
-OCRResult (structured blocks + raw text)
+HTML Generation
+    ├─ PDF viewer pages
+    └─ gallery index pages
+    ↓
+Static Site Output (SEO-ready)
 ```
+```mermaid
+flowchart TD
+    A[Input Image / Page Image]
+    B[Preprocess\nDenoise + Binarize]
+    C[Layout Detection\nColumns + Header Cutoff]
+    D[Region Classification\nText / Figure / Caption]
+    E[Region OCR\nCrop + Tesseract]
+    F[Fallback OCR\nColumn-level OCR]
+    G[Reading Order Assembly]
+    H[Structured OCRResult\nBlocks + Raw Text + Layout]
 
+    A --> B --> C --> D --> E --> G --> H
+    D -->|No usable regions| F --> G
+```
 ---
 
 ## 🔹 Core Capabilities
