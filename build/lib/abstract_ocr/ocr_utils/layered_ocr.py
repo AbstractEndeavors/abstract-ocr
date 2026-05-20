@@ -9,7 +9,7 @@ Unified OCR orchestration for multi-engine text extraction:
 """
 
 from .imports import *
-from .paddle_manager import PaddleManager
+from .paddle_funcs import PaddleManager
 # -----------------------------------------------------
 # Image Preprocessing
 # -----------------------------------------------------

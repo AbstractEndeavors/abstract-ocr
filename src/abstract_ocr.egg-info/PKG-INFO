@@ -1,7 +1,7 @@
 Metadata-Version: 2.4
 Name: abstract_ocr
-Version: 0.0.1.65
-Summary: A structured OCR pipeline designed for **layout-aware text extraction from complex documents**, combining preprocessing, column detection, region classification, and ordered OCR assembly.
+Version: 0.0.1.66
+Summary: A structured OCR pipeline designed for layout-aware text extraction from complex documents, combining preprocessing, column detection, region classification, PaddleOCR, and ordered OCR assembly.
 Author: putkoff
 Author-email: partners@abstractendeavors.com
 Classifier: Development Status :: 3 - Alpha
@@ -9,28 +9,53 @@ Classifier: Intended Audience :: Developers
 Classifier: Topic :: Software Development :: Libraries
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Programming Language :: Python :: 3
-Classifier: Programming Language :: Python :: 3.6
-Classifier: Programming Language :: Python :: 3.7
-Classifier: Programming Language :: Python :: 3.8
 Classifier: Programming Language :: Python :: 3.9
-Requires-Python: >=3.6
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Requires-Python: >=3.9
 Description-Content-Type: text/markdown
-Requires-Dist: abstract_utilities
-Requires-Dist: requests
-Requires-Dist: pdf2image
-Requires-Dist: PyPDF2
-Requires-Dist: easyocr
-Requires-Dist: pytest
-Requires-Dist: pytesseract
-Requires-Dist: lxml
+Requires-Dist: abstract_utilities==0.2.2.780
+Requires-Dist: abstract_hugpy==0.1.154
+Requires-Dist: abstract_pdfs==0.0.29
+Requires-Dist: paddleocr==3.5.0
+Requires-Dist: paddlepaddle==3.2.2
+Requires-Dist: paddlex==3.5.2
+Requires-Dist: pdf2image==1.17.0
+Requires-Dist: PyPDF2==3.0.1
+Requires-Dist: PyMuPDF==1.27.2
+Requires-Dist: pypdfium2==5.6.0
+Requires-Dist: pdfplumber==0.11.9
+Requires-Dist: pdfminer.six==20251230
+Requires-Dist: python-docx==1.2.0
+Requires-Dist: openpyxl==3.1.5
+Requires-Dist: opencv-python-headless==4.13.0.92
+Requires-Dist: pillow==12.1.1
+Requires-Dist: numpy==2.3.5
+Requires-Dist: scikit-image==0.26.0
+Requires-Dist: spacy==3.8.11
+Requires-Dist: nltk==3.9.4
+Requires-Dist: beautifulsoup4==4.14.3
+Requires-Dist: lxml==6.0.2
+Requires-Dist: requests==2.32.5
+Requires-Dist: tqdm==4.67.3
+Requires-Dist: PyYAML==6.0.2
+Requires-Dist: packaging
+Requires-Dist: typing_extensions==4.15.0
 Requires-Dist: moviepy==1.0.3
-Requires-Dist: spacy
-Requires-Dist: abstract_hugpy
+Provides-Extra: easyocr
+Requires-Dist: easyocr==1.7.2; extra == "easyocr"
+Provides-Extra: tesseract
+Requires-Dist: pytesseract==0.3.13; extra == "tesseract"
+Provides-Extra: all
+Requires-Dist: easyocr==1.7.2; extra == "all"
+Requires-Dist: pytesseract==0.3.13; extra == "all"
 Dynamic: author
 Dynamic: author-email
 Dynamic: classifier
 Dynamic: description
 Dynamic: description-content-type
+Dynamic: provides-extra
 Dynamic: requires-dist
 Dynamic: requires-python
 Dynamic: summary
