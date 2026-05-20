@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: abstract_ocr
-Version: 0.0.1.66
+Version: 0.0.1.67
 Summary: A structured OCR pipeline designed for layout-aware text extraction from complex documents, combining preprocessing, column detection, region classification, PaddleOCR, and ordered OCR assembly.
 Author: putkoff
 Author-email: partners@abstractendeavors.com
@@ -16,7 +16,6 @@ Classifier: Programming Language :: Python :: 3.12
 Requires-Python: >=3.9
 Description-Content-Type: text/markdown
 Requires-Dist: abstract_utilities==0.2.2.780
-Requires-Dist: abstract_hugpy==0.1.154
 Requires-Dist: abstract_pdfs==0.0.29
 Requires-Dist: paddleocr==3.5.0
 Requires-Dist: paddlepaddle==3.2.2
@@ -47,6 +46,8 @@ Provides-Extra: easyocr
 Requires-Dist: easyocr==1.7.2; extra == "easyocr"
 Provides-Extra: tesseract
 Requires-Dist: pytesseract==0.3.13; extra == "tesseract"
+Provides-Extra: abstract-hugpy
+Requires-Dist: abstract_hugpy; extra == "abstract-hugpy"
 Provides-Extra: all
 Requires-Dist: easyocr==1.7.2; extra == "all"
 Requires-Dist: pytesseract==0.3.13; extra == "all"

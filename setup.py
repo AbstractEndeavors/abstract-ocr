@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="abstract_ocr",
-    version='0.0.1.66',
+    version='0.0.1.67',
     author="putkoff",
     author_email="partners@abstractendeavors.com",
     description=(
@@ -32,7 +32,6 @@ setuptools.setup(
     install_requires=[
         # abstract packages
         "abstract_utilities==0.2.2.780",
-        "abstract_hugpy==0.1.154",
         "abstract_pdfs==0.0.29",
 
         # primary OCR backend
@@ -77,6 +76,7 @@ setuptools.setup(
     extras_require={
         "easyocr": ["easyocr==1.7.2"],
         "tesseract": ["pytesseract==0.3.13"],
+        "abstract_hugpy":["abstract_hugpy"],
         "all": [
             "easyocr==1.7.2",
             "pytesseract==0.3.13",

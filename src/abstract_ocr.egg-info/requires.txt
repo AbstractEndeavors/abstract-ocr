@@ -1,5 +1,4 @@
 abstract_utilities==0.2.2.780
-abstract_hugpy==0.1.154
 abstract_pdfs==0.0.29
 paddleocr==3.5.0
 paddlepaddle==3.2.2
@@ -26,6 +25,9 @@ PyYAML==6.0.2
 packaging
 typing_extensions==4.15.0
 moviepy==1.0.3
+
+[abstract_hugpy]
+abstract_hugpy
 
 [all]
 easyocr==1.7.2
