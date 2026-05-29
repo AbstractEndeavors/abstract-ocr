@@ -1,4 +1,4 @@
-abstract_utilities==0.2.2.780
+abstract_utilities
 abstract_pdfs==0.0.29
 paddleocr==3.5.0
 paddlepaddle==3.2.2

@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: abstract_ocr
-Version: 0.0.1.67
+Version: 0.0.1.68
 Summary: A structured OCR pipeline designed for layout-aware text extraction from complex documents, combining preprocessing, column detection, region classification, PaddleOCR, and ordered OCR assembly.
 Author: putkoff
 Author-email: partners@abstractendeavors.com
@@ -15,7 +15,7 @@ Classifier: Programming Language :: Python :: 3.11
 Classifier: Programming Language :: Python :: 3.12
 Requires-Python: >=3.9
 Description-Content-Type: text/markdown
-Requires-Dist: abstract_utilities==0.2.2.780
+Requires-Dist: abstract_utilities
 Requires-Dist: abstract_pdfs==0.0.29
 Requires-Dist: paddleocr==3.5.0
 Requires-Dist: paddlepaddle==3.2.2

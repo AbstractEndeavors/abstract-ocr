@@ -6,7 +6,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="abstract_ocr",
-    version='0.0.1.67',
+    version='0.0.1.68',
     author="putkoff",
     author_email="partners@abstractendeavors.com",
     description=(
@@ -31,7 +31,7 @@ setuptools.setup(
     ],
     install_requires=[
         # abstract packages
-        "abstract_utilities==0.2.2.780",
+        "abstract_utilities",
         "abstract_pdfs==0.0.29",
 
         # primary OCR backend
